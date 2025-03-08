@@ -1,118 +1,105 @@
 .navbar {
-    height: 5rem;
+    min-height: 5rem;
+    padding: 0.5rem 0;
     position: static;
     z-index: 1500;
 }
 
-.fa-compass{
+@media (min-width: 992px) {
+    .navbar {
+        height: 5rem;
+    }
+}
+
+.fa-compass {
     color: #1f7afa;
     font-size: 2rem;
 }
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-collapse {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        margin-top: 0;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
 .nav-link {
-    color: #222222 !important;
-}
-
-.btn-edit {
-    color: #fe424d;
-}
-
-.index-btn {
-    background-color: #fe424d;
-    color: white
-}
-
-.hover-text-primary:hover {
-    color: #0d6efd !important;
-    transform: translateY(-1px);
-}
-
-.social-icons a {
-    font-size: 1.2rem;
+    color: #222 !important;
+    padding: 0.5rem 1rem !important;
     transition: all 0.2s ease;
 }
 
-.social-icons a:hover {
-    transform: translateY(-2px);
-}
-
 .search-container {
-    width: 40%;
-    min-width: 300px;
-    margin: 9% !important;
-    /* margin: 20%; */
+    display: none; /* Hide search bar on mobile */
 }
 
-.search-input-wrapper {
-    position: relative;
-    background: #fff;
-    border-radius: 25px;
-    border: 1px solid #dee2e6;
-    height: 40px;
-}
-
-.search-input {
-    width: 100%;
-    height: 100%;
-    padding: 0 40px 0 20px;
-    border: none;
-    background: transparent;
-    font-size: 0.9rem;
-}
-
-.search-input:focus {
-    box-shadow: none;
-}
-
-.search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 6px;
-    border: 1px solid #dee2e6;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-}
-
-.clear-icon {
-    position: absolute;
-    right: 45px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.9rem;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.clear-icon.visible {
-    opacity: 1;
-}
-
-@media (max-width: 992px) {
+@media (min-width: 768px) {
     .search-container {
-        width: 100%;
-        order: 3;
-        margin-top: 1rem;
-    }
-    
-    .navbar-brand {
-        margin-right: 0;
+        display: block;
+        width: 60%;
+        margin: 0 auto !important;
     }
 }
 
-.success-message {
+@media (min-width: 992px) {
+    .search-container {
+        width: 40%;
+        min-width: 300px;
+        margin: 0 9% !important;
+    }
+}
+
+.dropdown-menu {
+    margin-top: 0.5rem !important;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
+
+.fa-user-circle {
+    font-size: 1.75rem !important;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+@media (min-width: 992px) {
+    .fa-user-circle {
+        font-size: 2rem !important;
+    }
+}
+
+body {
+    margin: 0;
+    position: relative;
+    background-image: url('banner-background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Success and Error Messages */
+.success-message, .error-message {
     position: fixed;
     top: 6rem;
     left: 50%;
     transform: translateX(-50%);
     padding: 15px 30px;
-    background-color: #4CAF50;
     color: white;
     border-radius: 25px;
     display: flex;
@@ -121,63 +108,62 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 2000;
     animation: slideDown 0.5s ease-out;
-  }
-  
-  @keyframes slideDown {
+}
+
+.success-message {
+    background-color: #4CAF50;
+}
+
+.error-message {
+    background-color: rgb(219, 69, 69);
+}
+
+@keyframes slideDown {
     from {
       top: -50px;
     }
     to {
       top: 6rem;
     }
-  }
+}
 
-  .close-btn {
+.close-btn {
     color: white;
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
     transition: 0.3s;
-  }
-
-  .close-btn:hover {
-    color: #e0e0e0;
-  }
-
-  .error-message {
-    position: fixed;
-    top: 6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 30px;
-    background-color: rgb(219, 69, 69);
-    color: white;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 2000;
-    animation: slideDown 0.5s ease-out;
-  }
-
-  body {
-    margin: 0;
-    position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('banner-background.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
+.close-btn:hover {
+    color: #e0e0e0;
+}
+
+/* Responsive Adjustments for Messages */
+@media (max-width: 768px) {
+    .success-message, .error-message {
+        width: 90%; /* Take up more width on smaller screens */
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+        font-size: 14px; /* Smaller font size for better fit */
+        top: 4rem; /* Adjust position for smaller screens */
+    }
+
+    .close-btn {
+        font-size: 16px; /* Smaller close button for mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .success-message, .error-message {
+        width: 95%; /* Take up almost full width on very small screens */
+        padding: 8px 15px; /* Further reduce padding */
+        font-size: 12px; /* Smaller font size */
+        top: 3rem; /* Adjust position for very small screens */
+    }
+
+    .close-btn {
+        font-size: 14px; /* Even smaller close button */
+    }
 }
 
 .heading {
@@ -212,6 +198,4 @@ body::before {
 #map {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
-  }
-
-
+}

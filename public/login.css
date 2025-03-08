@@ -1,7 +1,7 @@
 .auth-container {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
+    max-width: 90%; /* Adjusted for smaller screens */
+    margin: 1rem auto; /* Reduced margin for smaller screens */
+    padding: 1.5rem; /* Reduced padding for smaller screens */
     background: rgba(255, 255, 255, 0.96);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -10,9 +10,11 @@
 
 .auth-form .form-control {
     border: 2px solid #e3e3e3;
-    padding: 12px 20px;
+    padding: 10px 15px; /* Adjusted padding for smaller screens */
     border-radius: 8px;
     transition: all 0.3s ease;
+    width: 100%; /* Ensure full width on small screens */
+    font-size: 14px; /* Smaller font size for better fit */
 }
 
 .auth-form .form-control:focus {
@@ -22,32 +24,36 @@
 
 .auth-form .input-group {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem; /* Reduced margin for smaller screens */
 }
 
 .auth-form .input-icon {
     position: absolute;
-    right: 15px;
+    right: 10px; /* Adjusted position for smaller screens */
     top: 50%;
     transform: translateY(-50%);
     color: #666;
+    font-size: 16px; /* Adjusted icon size */
 }
 
 .auth-form .password-toggle {
     cursor: pointer;
     position: absolute;
-    right: 45px;
+    right: 35px; /* Adjusted position for smaller screens */
     top: 50%;
     transform: translateY(-50%);
     color: #666;
+    font-size: 16px; /* Adjusted icon size */
 }
 
 .auth-form .btn-auth {
     background: #1f7afa;
     color: white;
-    padding: 12px 0;
+    padding: 10px 0; /* Adjusted padding for smaller screens */
     border-radius: 8px;
     transition: all 0.3s ease;
+    width: 100%; /* Full width on small screens */
+    font-size: 16px; /* Adjusted font size */
 }
 
 .auth-form .btn-auth:hover {
@@ -59,8 +65,40 @@
     color: #1f7afa;
     cursor: pointer;
     text-decoration: none;
+    font-size: 14px; /* Smaller font size for better fit */
 }
 
 .auth-form .toggle-link:hover {
     text-decoration: underline;
+}
+
+/* Media Queries for Extra Small Screens (Phones) */
+@media (max-width: 576px) {
+    .auth-container {
+        padding: 1rem; /* Further reduced padding for very small screens */
+        margin: 0.5rem auto; /* Further reduced margin */
+    }
+
+    .auth-form .form-control {
+        padding: 8px 12px; /* Smaller padding for very small screens */
+        font-size: 13px; /* Smaller font size */
+    }
+
+    .auth-form .btn-auth {
+        padding: 8px 0; /* Smaller padding for very small screens */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .auth-form .input-icon,
+    .auth-form .password-toggle {
+        font-size: 14px; /* Smaller icon size */
+    }
+
+    .auth-form .toggle-link {
+        font-size: 13px; /* Smaller font size */
+    }
+
+    .heading{
+        font-size: 2rem;
+    }
 }

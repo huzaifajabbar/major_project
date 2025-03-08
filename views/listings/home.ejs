@@ -3,13 +3,9 @@
 <link href="/index.css" rel="stylesheet">
 <link href="/home.css" rel="stylesheet">
 
-<% layout("/layouts/boilerplate") %>
-
-<link href="/index.css" rel="stylesheet">
-
 <body>
   <div class="hero-container">
-    <h1 class="wanderlust-heading animate-slideDown">
+    <h1 class="heading animate-slideDown">
       Wanderlust
     </h1>
 
@@ -30,43 +26,55 @@
           Experience unique stays and hidden gems across the globe
         </p>
 
-        <div class="search-container">
-          <div class="search-bar glass-card">
-            <div class="input-group">
-              <span class="input-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </span>
-              <input type="text" 
-                     class="search-input" 
-                     placeholder="Where would you like to wander?">
-              <button class="explore-btn">
-                Explore Now
-                <i class="fas fa-arrow-right arrow-icon"></i>
-              </button>
-            </div>
-          </div>
+        <!-- Explore Now Button -->
+        <div class="explore-now-container">
+          <a href="/listings" class="explore-now-btn">
+            Explore Now
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </a>
         </div>
 
+        <!-- Value Cards -->
         <div class="value-grid">
-            <div class="value-card glass-card">
-                <i class="fas fa-home value-icon"></i>
-                <h3>List Your Space</h3>
-                <p>Join our host community and earn extra income</p>
-              </div>
-              
-              <div class="value-card glass-card">
-                <i class="fas fa-shield-alt value-icon"></i>
-                <h3>Verified Stays</h3>
-                <p>Quality-checked accommodations</p>
-              </div>
-              
-              <div class="value-card glass-card">
-                <i class="fas fa-globe value-icon"></i>
-                <h3>Global Reach</h3>
-                <p>Discover homes in 100+ countries</p>
-              </div>
+          <div class="value-card glass-card animate-slideInLeft">
+            <i class="fas fa-home value-icon"></i>
+            <h3>List Your Space</h3>
+            <p>Join our host community and earn extra income</p>
+          </div>
+          
+          <div class="value-card glass-card animate-slideInUp">
+            <i class="fas fa-shield-alt value-icon"></i>
+            <h3>Verified Stays</h3>
+            <p>Quality-checked accommodations</p>
+          </div>
+          
+          <div class="value-card glass-card animate-slideInRight">
+            <i class="fas fa-globe value-icon"></i>
+            <h3>Global Reach</h3>
+            <p>Discover homes in 100+ countries</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.value-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+  
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>

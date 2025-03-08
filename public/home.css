@@ -1,200 +1,254 @@
+/* General Styles */
 body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  
+  margin: 0;
+  position: relative;
+  background-image: url('banner-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Hero Container */
 .hero-container {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(173,216,230,0.15) 100%);
-    padding: 2rem;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.wanderlust-heading {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
   }
-  
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.main-card {
+  margin: 0 auto;
+  max-width: 1000px; /* Increased width for PC */
+  animation: scaleIn 1s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.title-container {
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.highlight {
+  color: #1f7afa;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Explore Now Button */
+.explore-now-container {
+  margin-bottom: 2rem;
+}
+
+.explore-now-btn {
+  background: #1f7afa;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.explore-now-btn:hover {
+  background: #054aab;
+}
+
+.arrow-icon {
+  margin-left: 0.5rem;
+}
+
+/* Value Grid */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 2rem;
+  color: #1f7afa;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Animations for Value Cards */
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 1s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      transform: translateX(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Mobile Animations for Cards */
+@media (max-width: 768px) {
+  .value-card {
+    animation: slideInUp 1s ease-out; /* Slide up animation for mobile */
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .wanderlust-heading {
-    position: absolute;
-    top: 2rem;
-    left: 40%;
-    font-family: 'Lobster', cursive;
-    color: #4a6cf7;
-    font-size: 4rem;
-    z-index: 2;
-    text-shadow: 2px 2px 4px rgba(74,108,247,0.1);
-  }
-  
-  .adventure-text {
-    position: relative;
-    display: inline-block;
-    font-family: 'Lobster', cursive;
-    font-weight: 100;
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
-    position: relative;
-    margin: 2rem 0;
-    padding-bottom: 8px;
-    display: inline-block;
+      font-size: 3rem;
   }
 
-  .adventure-text::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #1f7afa;
-    transform: scaleX(0.9);
-    transition: transform 0.3s ease;
-}
-
-.adventure-text:hover::after {
-    transform: scaleX(1);
-}
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(74,108,247,0.1);
-  }
-  
-  .main-card {
-    padding: 4rem 2rem;
-    margin-top: 8rem;
-  }
-  
-  .highlight {
-    color: #4a6cf7;
-    position: relative;
-  }
-  
-  .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 3px;
-    background: currentColor;
-    border-radius: 2px;
-  }
- 
-  .search-container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 2rem auto;
-  }
-  
-  .search-bar {
-    padding: 1rem;
-    margin: 0 auto;
+  .hero-title {
+      font-size: 2rem;
   }
 
-  .search-input {
-    width: 100%;
-    min-width: 300px;
-    padding: 1.2rem;
-    font-size: 1.2rem;
-  }
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
-  
-  .input-icon {
-    color: #4a6cf7;
-    font-size: 1.2rem;
-    padding: 0 1rem;
-  }
-  
-  .search-input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    font-size: 1.1rem;
-    padding: 1rem;
-    color: #2d3436;
-  }
-  
-  .explore-btn {
-    background: linear-gradient(135deg, #4a6cf7, #6b84f8);
-    border: none;
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    transition: all 0.3s ease;
-  }
-  
-  .explore-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(74,108,247,0.3);
+  .hero-subtitle {
+      font-size: 1rem;
   }
 
   .value-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-    padding: 0 2rem;
+      grid-template-columns: 1fr; /* Single column on mobile */
   }
-  
-  .value-card {
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-  
-  .value-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,0.8);
-  }
-  
-  .value-icon {
-    font-size: 2.5rem;
-    color: #4a6cf7;
-    margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+  .glass-card {
+      padding: 1rem;
   }
 
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    
-    .search-input {
-      min-width: auto;
+  .hero-title {
+      font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+      font-size: 0.9rem;
+  }
+
+  .value-card {
+      padding: 1rem;
+  }
+
+  .value-icon {
+      font-size: 1.5rem;
+  }
+
+  .value-card h3 {
       font-size: 1rem;
-    }
-    
-    .explore-btn {
-      padding: 1rem 1.5rem;
-    }
   }
-  
-  @media (max-width: 480px) {
-    .wanderlust-heading {
-      font-size: 1.8rem;
-      left: 1rem;
-    }
-    
-    .hero-title {
-      font-size: 2rem;
-    }
-    
-    .search-bar {
-      padding: 0.8rem;
-    }
+
+  .value-card p {
+      font-size: 0.8rem;
   }
+}
