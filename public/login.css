@@ -1,8 +1,9 @@
 .auth-container {
-    max-width: 90%; /* Adjusted for smaller screens */
+    max-width: 40%; /* Adjusted for smaller screens */
     margin: 1rem auto; /* Reduced margin for smaller screens */
     padding: 1.5rem; /* Reduced padding for smaller screens */
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blur effect */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -75,8 +76,10 @@
 /* Media Queries for Extra Small Screens (Phones) */
 @media (max-width: 576px) {
     .auth-container {
+        max-width: 100%;
         padding: 1rem; /* Further reduced padding for very small screens */
         margin: 0.5rem auto; /* Further reduced margin */
+        margin-bottom: 100px;
     }
 
     .auth-form .form-control {

@@ -1,4 +1,10 @@
 /* Base filter container styling */
+
+.container {
+    text-align: center;
+}
+
+
 .filters-container {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -33,6 +39,10 @@
 .filter-icon span {
     font-size: 14px;
     color: #333;
+}
+
+.body {
+    text-align: center;
 }
 
 /* Mobile scrolling styles */
@@ -265,8 +275,6 @@ form[action="/listings/new"] {
 }
 
 .heading {
-    text-align: center;
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }

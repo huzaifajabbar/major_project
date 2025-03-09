@@ -105,5 +105,4 @@ function wrapAsync(fn) {
   };
 }
 
-
 exports.wrapAsync = wrapAsync;
